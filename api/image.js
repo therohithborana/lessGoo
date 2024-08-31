@@ -37,7 +37,8 @@ export default async function handler(req, res) {
     const snapshot = await db.ref(`imageCodes/${code}`).once('value');
     const data = snapshot.val();
     if (data && data.url) {
-      res.status(200).json({ url: data.url });
+      // Redirect to the image URL instead of returning JSON
+      res.redirect(301, data.url);
     } else {
       res.status(404).json({ message: 'Image not found.' });
     }
