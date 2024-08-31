@@ -1,38 +1,29 @@
-import admin from 'firebase-admin';
 import multer from 'multer';
-import { IncomingForm } from 'formidable';
+import { v4 as uuidv4 } from 'uuid';
+import admin from 'firebase-admin';
 
-// Initialize Firebase Admin SDK
-const serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT);
-admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount),
-  storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
-  databaseURL: process.env.FIREBASE_DATABASE_URL,
-});
+const upload = multer({ storage: multer.memoryStorage() });
 
 const bucket = admin.storage().bucket();
 const db = admin.database();
 
-const upload = multer({ storage: multer.memoryStorage() });
-
-export default async function handler(req, res) {
+export default async (req, res) => {
   if (req.method === 'POST') {
-    const form = new IncomingForm();
-    form.parse(req, async (err, fields, files) => {
+    upload.single('file')(req, res, async (err) => {
       if (err) {
-        return res.status(500).send('Error parsing form.');
+        console.error('Error processing file upload:', err);
+        return res.status(500).send('Error processing file upload.');
       }
 
-      const file = files.file[0];
-      if (!file) {
+      if (!req.file) {
         return res.status(400).send('No file uploaded.');
       }
 
       try {
-        const blob = bucket.file(file.originalFilename);
-        const blobStream = blob.createWriteStream({
+        const file = bucket.file(req.file.originalname);
+        const blobStream = file.createWriteStream({
           metadata: {
-            contentType: file.mimetype,
+            contentType: req.file.mimetype,
           },
         });
 
@@ -42,19 +33,21 @@ export default async function handler(req, res) {
         });
 
         blobStream.on('finish', async () => {
-          const publicUrl = `https://firebasestorage.googleapis.com/v0/b/${bucket.name}/o/${encodeURIComponent(file.originalFilename)}?alt=media`;
+          const publicUrl = `https://firebasestorage.googleapis.com/v0/b/${bucket.name}/o/${encodeURIComponent(req.file.originalname)}?alt=media`;
 
           const code = uuidv4().slice(0, 4);
           try {
             await db.ref(`imageCodes/${code}`).set({ url: publicUrl });
             res.json({ link: publicUrl, code: code });
           } catch (error) {
+            console.error('Error storing data in Firebase Realtime Database:', error);
             res.status(500).send('Error storing data.');
           }
         });
 
-        blobStream.end(file.buffer);
+        blobStream.end(req.file.buffer);
       } catch (error) {
+        console.error('Error processing upload:', error);
         res.status(500).send('Error processing upload.');
       }
     });
@@ -62,4 +55,4 @@ export default async function handler(req, res) {
     res.setHeader('Allow', ['POST']);
     res.status(405).end(`Method ${req.method} Not Allowed`);
   }
-}
+};
