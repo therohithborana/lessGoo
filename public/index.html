@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ImageGo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="card">
+        <div class="card-header">
+            <h1 class="card-title">ImageGo</h1>
+        </div>
+        <div class="card-content">
+            <!-- Image Uploader Section -->
+            <div class="form-group">
+                <label for="image-upload">Select an image to upload</label>
+                <input type="file" id="image-upload" accept="image/*">
+            </div>
+            <div id="selected-file-alert" class="alert" style="display: none;">
+                <strong>Selected File:</strong>
+                <span id="selected-file-name"></span>
+            </div>
+            <div id="shareable-link-section" style="display: none;">
+                <div class="alert">
+                    <strong><span class="icon-link"></span> Shareable Link:</strong>
+                    <p id="shareable-link"></p>
+                    <p><strong>Code:</strong> <span id="image-code"></span></p>
+                </div>
+                <div class="qr-code-container">
+                    <img id="qr-code" alt="QR Code" src="" />
+                </div>
+            </div>
+
+            <!-- Image Lookup Section -->
+            <div class="lookup-section">
+                <h2>Access Image by Code</h2>
+                <div class="form-group">
+                    <label for="code-input">Enter 4-character code:</label>
+                    <input type="text" id="code-input" maxlength="4">
+                    <button id="lookup-button">Lookup Image</button>
+                </div>
+                <div id="lookup-result" style="display: none;">
+                    <p id="result-message"></p>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer">
+            <button id="upload-button" disabled>Upload</button>
+            <button id="download-button" disabled>Download</button>
+            <button id="copy-link-button" disabled>Copy URL</button>
+        </div>
+    </div>
+
+    <!-- Include your image lookup script here -->
+    <script src="code-lookup.js"></script>
+</body>
+</html>
