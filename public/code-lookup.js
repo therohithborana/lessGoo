@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (code.length === 4) {
             try {
-                const response = await fetch(`/api/image/${code}`);
+                const response = await fetch(`/api/image?code=${code}`);
                 const data = await response.json();
 
                 if (response.ok) {
