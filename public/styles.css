@@ -1,42 +1,47 @@
-html, body {
-    height: 100%;
-    margin: 0;
-    display: grid;
-    place-items: center; /* Center both horizontally and vertically */
-    background-color: #202124;
+html,
+body {
+  height: 100%;
+  margin: 0;
+  display: grid;
+  place-items: center;
+  /* Center both horizontally and vertically */
+  background-color: #202124;
 }
 
 
 
 /* The card class remains the same */
 .card {
-    max-width: 800px;
-    padding: 20px;
-    background: rgba(29, 27, 27, 0.52);
-    border: 10px solid transparent; /* Create space for the border */
-    border-image: linear-gradient(45deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82); /* Gradient border */
-    border-image-slice: 1; /* Ensure the gradient covers the border */
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  padding: 20px;
+  background: rgba(29, 27, 27, 0.52);
+  border: 10px solid transparent;
+  /* Create space for the border */
+  border-image: linear-gradient(45deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+  /* Gradient border */
+  border-image-slice: 1;
+  /* Ensure the gradient covers the border */
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Style for labels */
 label {
-    display: block;
-    font-size: 16px;
-    font-weight: 500;
-    color:#FF624A;
-    margin-bottom: 8px;
-    font-family: 'Lato', sans-serif;
+  display: block;
+  font-size: 16px;
+  font-weight: 500;
+  color: #FF624A;
+  margin-bottom: 8px;
+  font-family: 'Lato', sans-serif;
 }
 
 /* Style for h2 headers */
 h2 {
-    font-size: 24px;
-    font-weight: 600;
-    color: #fff;
-    margin-bottom: 20px;
-    font-family: 'Lato', sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 20px;
+  font-family: 'Lato', sans-serif;
 }
 
 
@@ -46,118 +51,124 @@ h2 {
 
 
 
-  
+
 .container {
-    
-    width: 100%;
-    display: flex;
-    justify-content: center; /* Center horizontally */
+
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  /* Center horizontally */
 }
 
 
 
 
 .card-header {
-    text-align: center;
+  text-align: center;
 }
 
 .card-title {
-    margin: 0;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 2rem;
-    
-    cursor: pointer;
-    color: white;
+  margin: 0;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 2rem;
+
+  cursor: pointer;
+  color: white;
 }
 
 .card-content {
-    margin: 20px 0;
+  margin: 20px 0;
 }
 
 .form-group {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
-input[type="file"], input[type="text"], button {
-    display: block;
-    margin: 10px auto;
+input[type="file"],
+input[type="text"],
+button {
+  display: block;
+  margin: 10px auto;
 }
 
 button {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    background-color: #007bff;
-    color: white;
-    cursor: pointer;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
 }
 
 button:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
+  background-color: #ccc;
+  cursor: not-allowed;
 }
 
 button:hover:not(:disabled) {
-    background-color: #0056b3;
+  background-color: #0056b3;
 }
 
 .alert {
-    padding: 15px;
-    margin: 10px 0;
-    background: linear-gradient(to bottom left, #ffc7d0 40%, #FFC39E 100%);
-    color:black;
-    border-radius: 5px;
-    font-family: 'Courier New', Courier, monospace;
+  padding: 15px;
+  margin: 10px 0;
+  background: linear-gradient(to bottom left, #ffc7d0 40%, #FFC39E 100%);
+  color: black;
+  border-radius: 5px;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 .qr-code-container {
-    text-align: center;
-    margin-top: 20px;
+  text-align: center;
+  margin-top: 20px;
 }
 
 .qr-code-placeholder {
-    background-color: #e9ecef;
-    border: 1px solid #ced4da;
-    padding: 20px;
-    display: inline-block;
+  background-color: #e9ecef;
+  border: 1px solid #ced4da;
+  padding: 20px;
+  display: inline-block;
 }
 
 
 /* Style for the file input */
 input[type="file"] {
-    display: block;
-    width: 100%;
-    /* padding: 10px; */
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    background-color: #222;
-    color: #fff;
-    font-size: 16px;
-    font-family: "Poppins", sans-serif;
-    cursor: pointer;
+  display: block;
+  width: 100%;
+  /* padding: 10px; */
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #222;
+  color: #fff;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
 }
 
 
 .file-upload-button {
-    display: inline-block;
-    cursor: pointer; /* Make the label clickable */
-    font-size: 16px;
-    font-family: "Poppins", sans-serif;
-    color: white;
-    background-color: #444; /* Background color for the label */
-    border: 1px solid #666; /* Border for the label */
-    border-radius: 5px;
-    padding: 10px 20px;
-    text-align: center;
-    transition: background-color 0.3s ease;
+  display: inline-block;
+  cursor: pointer;
+  /* Make the label clickable */
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  color: white;
+  background-color: #444;
+  /* Background color for the label */
+  border: 1px solid #666;
+  /* Border for the label */
+  border-radius: 5px;
+  padding: 10px 20px;
+  text-align: center;
+  transition: background-color 0.3s ease;
 }
 
 /* Hover state for the custom file input button */
 .file-upload-button:hover {
-    background-color: #ff5722;
-    box-shadow: 0px 15px 20px rgba(119, 29, 0, 0.73);
-    color: #fff;
-    transform: translateY(-7px);
+  background-color: #ff5722;
+  box-shadow: 0px 15px 20px rgba(119, 29, 0, 0.73);
+  color: #fff;
+  transform: translateY(-7px);
 }
 
 
@@ -167,127 +178,174 @@ input[type="file"] {
 
 /* General button styles */
 button {
-    display: inline-block;
-    padding: 10px 20px;
-    font-size: 16px;
-    font-family: "Poppins", sans-serif;
-    color: white;
-    background-color: #007bff; /* Primary button color */
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    text-align: center;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
-    margin: 5px; /* Space between buttons */
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  color: white;
+  background-color: #007bff;
+  /* Primary button color */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  margin: 5px;
+  /* Space between buttons */
 }
 
 /* Hover state for buttons */
 button:hover:not(:disabled) {
-     background-color: #ff5722; /* Darker shade of primary color */
-    color: #fff;
+  background-color: #ff5722;
+  /* Darker shade of primary color */
+  color: #fff;
 }
 
 /* Disabled state for buttons */
 button:disabled {
-    background-color: #ccc; /* Gray color for disabled state */
-    color: #666; /* Darker gray text */
-    cursor: not-allowed;
-    box-shadow: none;
+  background-color: #ccc;
+  /* Gray color for disabled state */
+  color: #666;
+  /* Darker gray text */
+  cursor: not-allowed;
+  box-shadow: none;
 }
 
 /* Specific button styles for different actions */
 #upload-button {
-    background-color: rgba(29, 27, 27, 0.52); /* Primary color for lookup button */
-    border: 2px solid #ff5722; /* Border color and width */
-    color:#ff5722; ; /* Black text color for contrast */
+  background-color: rgba(29, 27, 27, 0.52);
+  /* Primary color for lookup button */
+  border: 2px solid #ff5722;
+  /* Border color and width */
+  color: #ff5722;
+  ;
+  /* Black text color for contrast */
 }
 
 #upload-button:hover:not(:disabled) {
-    background-color: #ff5722; /* Darker shade of primary color */
-    color: #fff;
+  background-color: #ff5722;
+  /* Darker shade of primary color */
+  color: #fff;
 }
 
 #download-button {
-    background-color: rgba(29, 27, 27, 0.52); /* Primary color for lookup button */
-    border: 2px solid #ff5722; /* Border color and width */
-    color:#ff5722; ; /* Black text color for contrast */
+  background-color: rgba(29, 27, 27, 0.52);
+  /* Primary color for lookup button */
+  border: 2px solid #ff5722;
+  /* Border color and width */
+  color: #ff5722;
+  ;
+  /* Black text color for contrast */
 }
 
 
 #download-button:hover:not(:disabled) {
-    background-color: #ff5722; /* Darker shade of primary color */
-    color: #fff;
+  background-color: #ff5722;
+  /* Darker shade of primary color */
+  color: #fff;
 }
 
 #copy-link-button {
-    background-color: rgba(29, 27, 27, 0.52); /* Primary color for lookup button */
-    border: 2px solid #ff5722; /* Border color and width */
-    color:#ff5722; ; /* Black text color for contrast */
+  background-color: rgba(29, 27, 27, 0.52);
+  /* Primary color for lookup button */
+  border: 2px solid #ff5722;
+  /* Border color and width */
+  color: #ff5722;
+  ;
+  /* Black text color for contrast */
 }
 
 #copy-link-button:hover:not(:disabled) {
-    background-color: #ff5722; /* Darker shade of primary color */
-    color: #fff;
+  background-color: #ff5722;
+  /* Darker shade of primary color */
+  color: #fff;
 }
 
 /* Lookup button styles */
 #lookup-button {
-    background-color: rgba(29, 27, 27, 0.52); /* Primary color for lookup button */
-    border: 2px solid #ff5722; /* Border color and width */
-    color: #ff5722; /* Text color */
-    padding: 10px 20px; /* Padding */
-    border-radius: 5px; /* Rounded corners */
-    cursor: pointer; /* Pointer cursor on hover */
-    font-size: 16px; /* Font size */
-    font-weight: 500; /* Font weight */
-    transition: background-color 0.3s, border-color 0.3s; /* Smooth transition for hover effects */
+  background-color: rgba(29, 27, 27, 0.52);
+  /* Primary color for lookup button */
+  border: 2px solid #ff5722;
+  /* Border color and width */
+  color: #ff5722;
+  /* Text color */
+  padding: 10px 20px;
+  /* Padding */
+  border-radius: 5px;
+  /* Rounded corners */
+  cursor: pointer;
+  /* Pointer cursor on hover */
+  font-size: 16px;
+  /* Font size */
+  font-weight: 500;
+  /* Font weight */
+  transition: background-color 0.3s, border-color 0.3s;
+  /* Smooth transition for hover effects */
 }
 
 
 #lookup-button:hover:not(:disabled) {
-    background-color: #ff5722; /* Darker shade of primary color */
-    color: #fff;
+  background-color: #ff5722;
+  /* Darker shade of primary color */
+  color: #fff;
 }
 
 
 /* Results css */
 #lookup-result {
-    margin: 20px 0;
-    padding: 10px;
-    background-color: rgba(0, 0, 0, 0.1); /* Light background to contrast with white text */
-    border-radius: 5px;
+  margin: 20px 0;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.1);
+  /* Light background to contrast with white text */
+  border-radius: 5px;
 }
 
 #result-message {
-    color:#ff5722;
-    font-size: 16px;
-    font-weight: 500;
-    font-family: 'Lato', sans-serif;
+  color: #ff5722;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: 'Lato', sans-serif;
 }
 
 a {
-    color: white; /* Default link color */
-    font-family: "Comfortaa", system-ui; /* Font family for links */
+  color: white;
+  /* Default link color */
+  font-family: "Comfortaa", system-ui;
+  /* Font family for links */
 }
 
 p#shareable-link a {
-    color: black; /* Link color specifically inside the paragraph with ID 'sharable-link' */
+  color: black;
+  /* Link color specifically inside the paragraph with ID 'sharable-link' */
 }
 
-p
-{
-    font-size: 16px;
+p {
+  font-size: 16px;
 }
 
 
 
 #code-input {
-    padding: 10px; /* Adjust padding as needed */
-    border: 5px solid transparent; /* Create space for the gradient border */
-    border-radius: 4px; /* Optional: Adjust if you want rounded corners */
-    background-color: #fff; /* Background color for the input field */
-    outline: none; /* Remove default outline */
-    color: #000; /* Text color */
-    font-size: 16px; /* Font size */
-    border-image: linear-gradient(45deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82) 1; /* Apply gradient border */
+  padding: 10px;
+  /* Adjust padding as needed */
+  border: 5px solid transparent;
+  /* Create space for the gradient border */
+  border-radius: 4px;
+  /* Optional: Adjust if you want rounded corners */
+  background-color: #fff;
+  /* Background color for the input field */
+  outline: none;
+  /* Remove default outline */
+  color: #000;
+  /* Text color */
+  font-size: 16px;
+  /* Font size */
+  border-image: linear-gradient(45deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82) 1;
+  /* Apply gradient border */
+}
+
+/* Style for .card-footer to position buttons properly */
+.card-footer {
+  margin-top: 20px;
+  text-align: center;
 }
