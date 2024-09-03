@@ -1,10 +1,12 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function() {
     const codeInput = document.getElementById("code-input");
     const lookupButton = document.getElementById("lookup-button");
     const lookupResult = document.getElementById("lookup-result");
     const resultMessage = document.getElementById("result-message");
 
-    lookupButton.addEventListener("click", async function () {
+    let imageURL = ''; // Variable to store the image URL
+
+    lookupButton.addEventListener("click", async function() {
         const code = codeInput.value.trim();
 
         if (code.length === 4) {
@@ -13,8 +15,14 @@ document.addEventListener("DOMContentLoaded", function () {
                 const data = await response.json();
 
                 if (response.ok) {
+                    imageURL = data.url; // Store the image URL
                     // Display the URL to the user
-                    resultMessage.innerHTML = `Image URL: <a href="${data.url}" target="_blank">${data.url}</a>`;
+                    resultMessage.innerHTML = `Image URL: <a href="${imageURL}" target="_blank">${imageURL}</a>`;
+
+                    // Show download and copy link buttons
+                    if (window.showDownloadAndCopyButtons) {
+                        window.showDownloadAndCopyButtons(imageURL);
+                    }
                 } else {
                     resultMessage.textContent = data.message || 'Invalid code or code expired. Please check and try again.';
                 }
@@ -29,4 +37,9 @@ document.addEventListener("DOMContentLoaded", function () {
             lookupResult.style.display = 'block';
         }
     });
+
+    // Expose the image URL to other scripts
+    window.getImageURL = function() {
+        return imageURL;
+    };
 });
