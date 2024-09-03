@@ -2,7 +2,7 @@
 
 LessGoo is a Vercel-compatible version of the [ImageGoo](https://github.com/yourusername/imagegoo) project. It provides the same functionality for uploading, sharing, and accessing images using unique 4-character codes, but is structured to work with Vercel's serverless deployment model.
 
-![image](https://github.com/user-attachments/assets/92709afc-b131-4a8e-b2ca-5a3f0fa5e64b)
+![image](https://github.com/user-attachments/assets/17be8e55-53a3-4449-ad55-85f60fb59361)
 
 ## Table of Contents
 - [Overview](#overview)
